@@ -1,7 +1,241 @@
+body {
+    background-color: #f5f5f5 !important;
+}
 #navbar {
     background-color:#1D6D8B;
     color: #FFF;
 }
 #navbar div div a {
     color: #FFF;
+}
+
+/* LOGIN FORM */
+#login > div {
+    margin: 15% auto;
+    max-width: 500px;
+    background-color: #FFF;
+    padding-bottom: 25px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#login button {
+    width: 90%;
+    margin: auto;
+    display: block;
+    background-color: #EB703B;
+    border-color:#EB703B;
+    color:#FFF;
+}
+
+#login a {
+    color: #1D6D8B;
+}
+
+.form-group.input-material {
+    position: relative;
+    margin: 50px auto 25px;
+    width: 90%;
+}
+.form-group.input-material label {
+    color: #1D6D8B;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    bottom: 1px;
+    transition: 0.1s ease all;
+    -moz-transition: 0.1s ease all;
+    -webkit-transition: 0.1s ease all;
+}
+.form-group.input-material textarea.form-control ~ label {
+    bottom: 90%;
+    bottom: calc(100% - 38px);
+}
+.form-group.input-material .form-control, .form-group.input-material .form-select {
+    border: none;
+    border-bottom: 2px solid #1D6D8B;
+    border-radius: 0px;
+    background-color: transparent;
+    padding-left: 5px;
+    box-shadow: none;
+   /* required fields */
+   /* active state */
+   /* invalid state */
+}
+.form-group.input-material .form-control:required ~ label::after, .form-group.input-material .form-select:required ~ label::after {
+    content: '*';
+    color: #dc3545;
+    padding-left: 2px;
+    font-size: 0.8em;
+}
+.form-group.input-material .form-control:focus, .form-group.input-material .form-select:focus, .form-group.input-material .form-control[value]:not([value=""]), .form-group.input-material .form-select[value]:not([value=""]) {
+    border-bottom-color: #1D6D8B;
+    color: #000;
+}
+.form-group.input-material .form-control:focus ~ label, .form-group.input-material .form-select:focus ~ label, .form-group.input-material .form-control[value]:not([value=""]) ~ label, .form-group.input-material .form-select[value]:not([value=""]) ~ label {
+    top: unset;
+    bottom: 100%;
+    bottom: calc(100% - 16px);
+    font-size: 14px;
+    color: #1D6D8B;
+    font-weight: 500;
+}
+.form-group.input-material .form-control:focus.invalid, .form-group.input-material .form-select:focus.invalid, .form-group.input-material .form-control.invalid, .form-group.input-material .form-select.invalid, .form-group.input-material .form-control:focus.parsley-error, .form-group.input-material .form-select:focus.parsley-error, .form-group.input-material .form-control[value]:not([value=""]).parsley-error, .form-group.input-material .form-select[value]:not([value=""]).parsley-error {
+    border-bottom-color: #dc3545;
+}
+.form-group.input-material .form-control:focus.invalid ~ label, .form-group.input-material .form-select:focus.invalid ~ label, .form-group.input-material .form-control.invalid ~ label, .form-group.input-material .form-select.invalid ~ label, .form-group.input-material .form-control:focus.parsley-error ~ label, .form-group.input-material .form-select:focus.parsley-error ~ label, .form-group.input-material .form-control[value]:not([value=""]).parsley-error ~ label, .form-group.input-material .form-select[value]:not([value=""]).parsley-error ~ label {
+    color: #dc3545;
+}
+.form-group.input-material .form-select {
+    background-position: right 0 center;
+    padding-left: 0;
+}
+.form-group.input-material .parsley-errors-list {
+    color: #dc3545;
+    list-style: none;
+    font-size: 0.7em;
+    padding-left: 5px;
+    position: absolute;
+    top: 107%;
+}
+.pure-material-checkbox {
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Input */
+.pure-material-checkbox > input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    box-shadow: none;
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Span */
+.pure-material-checkbox > span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Box */
+.pure-material-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 11px 3px 1px;
+    border: solid 2px; /* Safari */
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Checkmark */
+.pure-material-checkbox > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 10px;
+    height: 5px;
+    border: solid 2px transparent;
+    border-right: none;
+    border-top: none;
+    transform: translate(3px, 4px) rotate(-45deg);
+}
+
+/* Checked, Indeterminate */
+.pure-material-checkbox > input:checked,
+.pure-material-checkbox > input:indeterminate {
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-checkbox > input:checked + span::before,
+.pure-material-checkbox > input:indeterminate + span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-checkbox > input:checked + span::after,
+.pure-material-checkbox > input:indeterminate + span::after {
+    border-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+}
+
+.pure-material-checkbox > input:indeterminate + span::after {
+    border-left: none;
+    transform: translate(4px, 3px);
+}
+
+/* Hover, Focus */
+.pure-material-checkbox:hover > input {
+    opacity: 0.04;
+}
+
+.pure-material-checkbox > input:focus {
+    opacity: 0.12;
+}
+
+.pure-material-checkbox:hover > input:focus {
+    opacity: 0.16;
+}
+
+/* Active */
+.pure-material-checkbox > input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.pure-material-checkbox > input:active + span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-checkbox > input:checked:active + span::before {
+    border-color: transparent;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+}
+
+/* Disabled */
+.pure-material-checkbox > input:disabled {
+    opacity: 0;
+}
+
+.pure-material-checkbox > input:disabled + span {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    cursor: initial;
+}
+
+.pure-material-checkbox > input:disabled + span::before {
+    border-color: currentColor;
+}
+
+.pure-material-checkbox > input:checked:disabled + span::before,
+.pure-material-checkbox > input:indeterminate:disabled + span::before {
+    border-color: transparent;
+    background-color: currentColor;
 }

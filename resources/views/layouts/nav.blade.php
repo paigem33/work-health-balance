@@ -1,11 +1,4 @@
 <style>
-   body {
-	 background-color: #fff;
-	 font-family: Arial, sans-serif;
-	 font-size: 14px;
-	 letter-spacing: 0.01em;
-	 color: #39464e;
-}
  .navbar-default {
 	 background-color: #fff;
 	 margin-left: 200px;
